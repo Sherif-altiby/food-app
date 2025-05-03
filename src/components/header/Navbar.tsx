@@ -25,7 +25,7 @@ const Navbar = () => {
       <Button
         variant="secondary"
         size="sm"
-        className="lg:hidden"
+        className="lg:hidden cursor-pointer"
         onClick={() => setOpenMenu(true)}
       >
         <Menu />
@@ -40,7 +40,7 @@ const Navbar = () => {
         <Button
           variant="secondary"
           size="sm"
-          className="absolute top-10 right-10 lg:hidden"
+          className="absolute top-10 right-10 lg:hidden cursor-pointer"
           onClick={() => setOpenMenu(false)}
         >
           <XIcon className="!w-6 !h-6" />
