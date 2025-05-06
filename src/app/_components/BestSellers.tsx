@@ -1,31 +1,12 @@
 import MainHeading from '@/components/main-heading';
 import Menu from '@/components/menu';
+import { getBestSellers } from '@/server/db/product';
 
-const bestSellers = [
-    {
-        id: crypto.randomUUID(),
-        name: "Pizza",
-        description: "Hello",
-        basePrice: 42,
-        image: "/pizza.png"
-    },
-    {
-        id: crypto.randomUUID(),
-        name: "Pizza",
-        description: "Hello",
-        basePrice: 42,
-        image: "/pizza.png"
-    },
-    {
-        id: crypto.randomUUID(),
-        name: "Pizza",
-        description: "Hello",
-        basePrice: 42,
-        image: "/pizza.png"
-    },
-]
 
 async function BestSellers() {
+  
+  const bestSellers  = await getBestSellers()
+
   return (
     <section>
       <div className='container'>

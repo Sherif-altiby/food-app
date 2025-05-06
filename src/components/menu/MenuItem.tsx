@@ -1,13 +1,14 @@
 import { formatCurrency } from "@/lib/formatter";
 import Image from "next/image";
-// import AddToCartButton from "./add-to-cart-button";
-// import { ProductWithRelations } from "@/ty   pes/product";
+import AddTocCartButton from "./add-to-cart-button";
+import { ProductWithRelations } from "@/types/product";
 
-function MenuItem({ item }: { item: any }) {
+
+function MenuItem({ item }: { item: ProductWithRelations }) {
   return (
     <li
       className="p-6 rounded-lg text-center
-    group hover:bg-white hover:shadow-md hover:shadow-black/25 transition-all"
+    group hover:bg-white hover:shadow-md hover:shadow-black/25 transition-all bg-gray-50"
     >
       <div className="relative w-48 h-48 mx-auto">
         <Image src={item.image} className="object-cover" alt={item.name} fill />
@@ -17,7 +18,7 @@ function MenuItem({ item }: { item: any }) {
         <strong className="text-accent"> {formatCurrency(item.basePrice)} </strong>
       </div>
       <p className="text-gray-500 text-sm line-clamp-3">{item.description}</p>
-      {/* <AddToCartButton item={item} /> */}
+      <AddTocCartButton item={item} />
     </li>
   );
 }
